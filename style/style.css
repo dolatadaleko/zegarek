@@ -80,4 +80,8 @@ body nav .burgerWrapper ol {
 }
 body nav .burgerWrapper #toggler:checked ~ ol {
   top: 100%;
+}
+body nav .burgerWrapper a {
+  text-decoration: none;
+  color: #000;
 }/*# sourceMappingURL=style.css.map */

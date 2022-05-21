@@ -82,6 +82,8 @@ body{
                 right: -2rem;
                 display: flex;
                 
+                
+                
             }
 
             #toggler:checked ~ {
@@ -92,10 +94,15 @@ body{
                     
                     
                 }
-
+                
             }
+            a{
+                text-decoration: none;
+                color: #000;
 
-
+            } 
+            
+            
 
         }
     }
