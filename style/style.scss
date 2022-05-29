@@ -4,11 +4,40 @@ $navButtonSize:2rem;
 $globalPadding: 2.7rem;
 $border:2px solid black;
 *{
-    box-sizing: border-box;
+    box-sizing: border-box;}
     
+    a{text-decoration: none;
+        color: inherit;
+    }
     
-}
-
+    button{
+        cursor: pointer;
+        border-radius: 0;
+        padding: 1rem 2.5rem;
+        background-color: #FE682F;
+        border: $border;
+        position: relative;
+        transition: .5;
+        &:after{
+        content: '';
+        border: $border;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        top: .5rem;
+        left: .5rem;
+        z-index: -1;
+        }
+        &:active{
+            top: .5;
+            left:.5;
+            &:after{
+                top: 0;
+                left:0;
+            }
+        }
+    }
 body{
     z-index: -3;
     position: relative;
@@ -140,6 +169,9 @@ body{
             
 
         }
+        .buttons{
+            display: none;
+        }
     }
     
     main{
@@ -152,6 +184,7 @@ body{
             h2{
                 font-size: 2rem;
                 margin: .5rem 0;
+                
                 
             }
             p{
@@ -170,7 +203,6 @@ body{
                 border-left: $border;
                 border-right: $border;
                 .img{
-                    border: 2px dashed red;
                     min-height: 80vh;
                     background-image: url("../img/man-is-putting-watch-his-wrist-1.webp");
                     background-size: cover;
@@ -188,33 +220,6 @@ body{
                 padding: $globalPadding 0;
                 display: flex;
                 justify-content: center;
-                button{
-                    border-radius: 0;
-                    padding: 1rem 2.5rem;
-                    background-color: #FE682F;
-                    border: $border;
-                    position: relative;
-                    transition: .5;
-                    &:after{
-                    content: '';
-                    border: $border;
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: white;
-                    top: .5rem;
-                    left: .5rem;
-                    z-index: -1;
-                    }
-                    &:active{
-                        top: .5;
-                        left:.5;
-                        &:after{
-                            top: 0;
-                            left:0;
-                        }
-                    }
-                }
                 
             }
 
@@ -268,7 +273,7 @@ body{
 // Laptop view
 @media (min-width:1280px){
     nav{
-        padding: 0 !important;
+        padding: 0 3rem !important;
         .logowrapper{
             &:before{
             display: none;
@@ -277,21 +282,125 @@ body{
             
         }
         .burgerWrapper{
-            border: 5px dashed red;
+            border-left: $border;
+            border-right: $border;
+            flex: 1;
+            padding: 0 2rem;
+            
             
             ol{
+
                 top:0 !important;
                 position: relative !important;
                 z-index: 2 !important;
                 width: auto !important;
                 right: auto !important;
+                flex: 1;
+                justify-content: space-evenly; 
                 
             }
             label{
                 display: none;
             }
         }
+        .buttons{
+            display: flex !important;
+            align-items: center;
+            a{
+                margin: 0 1rem;
+            }
+        }
 
+        .logowrapper,
+        .buttons{
+            padding: 2.5rem 2rem;
+        }
+
+    }
+
+    main{
+        display: grid;
+        grid-template-columns: 2.5fr 1fr;
+        margin: 0 6rem;
+        margin-bottom: 4rem;
+        .titleWrapper{
+            padding: 3rem 2rem 4rem 3rem !important;
+            margin: 0 !important;
+            border-bottom: $border;
+            h2{
+               font-size:6rem !important ;
+               img{
+                   transform: scale(2.4);
+                   margin-left: 2rem;
+                   padding-bottom: .5rem;
+               } 
+            }
+            p{
+                max-width: 70%;
+            }
+            button{
+                display: flex !important;
+                margin: 2rem 0;
+            }
+            
+        }
+
+        .imgContainer{
+            border: none !important;
+            .imgWrapper{
+            margin: 0 !important;
+            height: 100%;
+            .img{
+                min-height: 100% !important;
+                
+            }
+            }
+        }
+
+        .contentContainer{
+            padding: 0 !important;
+            margin:0 !important;
+            display: flex;
+            flex-direction: row;
+            border-bottom: $border;
+            border-right: none !important;
+            .buttonContainer{
+                display: none !important;
+            }
+            .imgWrapper{
+                flex: 1;
+                width: 100%;
+                .img{
+                    min-height: 100% !important;
+                    width: 100%;
+                    border: none !important;
+                }
+            }
+
+            .contentWrapper{
+                flex: 2.5;
+                padding: 2rem 3rem;
+                font-size: 1.5rem;
+                p{
+                text-align: left !important;
+                }
+
+            }
+        }
+        
+        .trendingWrapper{
+            border-top: none !important;
+            border-left: none !important;
+            .trending{
+                margin: 0 !important;
+                min-height: 100%;
+                p{
+                    display: flex;
+                    align-items: center;
+                }
+
+            }
+        }
     }
 }
 
