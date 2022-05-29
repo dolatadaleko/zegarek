@@ -203,6 +203,16 @@ body main .contentContainer .buttonContainer {
   display: flex;
   justify-content: center;
 }
+body main .contentContainer .buttonContainer button:before {
+  content: "";
+  background-image: url("../img/arrow.svg");
+  background-size: contain;
+  width: 4rem;
+  height: 2rem;
+  position: absolute;
+  margin-left: 8rem;
+  background-repeat: no-repeat;
+}
 body main .contentContainer .imgWrapper .img {
   min-height: 60vh;
   background-size: cover;
@@ -296,6 +306,16 @@ nav .buttons {
   main .titleWrapper button {
     display: flex !important;
     margin: 2rem 0;
+  }
+  main .titleWrapper button:before {
+    content: "";
+    background-image: url("../img/arrow.svg");
+    background-size: contain;
+    width: 8rem;
+    height: 4rem;
+    position: absolute;
+    margin-left: 8rem;
+    background-repeat: no-repeat;
   }
   main .imgContainer {
     border: none !important;
